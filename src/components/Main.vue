@@ -13,7 +13,7 @@ export default {
       console.log('fetching data')
       //qui viene fatta chiamata in get a endopoint:
       axios
-        .get('https://db.ygoprodeck.com/api/v7/cardinfo.php')
+        .get('https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0')
         //uso arrow function per poter avere un this dove accedere alle informazioni interne
         .then((res)=> {
           console.log(res.data.data)
@@ -36,9 +36,9 @@ export default {
 
           <ul class="cards-list px-4">
             <li v-for="card in cards" :key="card.id" >
-              <img :src="card.card_images.image_url_cropped" alt="">
+              <img :src="card.card_images.image_url" alt="">
               <h2>{{ card.name }}</h2>
-              <h3></h3>
+              <h3>{{ card.archetype }}</h3>
             </li>
           </ul>
 
