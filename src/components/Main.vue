@@ -36,7 +36,7 @@ export default {
 
           <ul class="cards-list px-4">
             <li v-for="card in cards" :key="card.id" >
-              <img :src="card.card_images.image_url" alt="">
+              <img :src="card.card_images.image_url_small" alt="">
               <h2>{{ card.name }}</h2>
               <h3>{{ card.archetype }}</h3>
             </li>
