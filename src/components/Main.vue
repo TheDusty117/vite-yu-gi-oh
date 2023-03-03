@@ -36,7 +36,8 @@ export default {
 
           <ul class="cards-list px-4">
             <li v-for="card in cards" :key="card.id" >
-              <img :src="card.card_images.image_url_small" alt="">
+              <img :src="card.card_images" alt="">
+              <h2>{{ card.card_images[0].image_url_cropped }}</h2>
               <h2>{{ card.name }}</h2>
               <h3>{{ card.archetype }}</h3>
             </li>
@@ -61,6 +62,12 @@ export default {
   grid-template-columns: repeat(5,1fr);
     li{
       width: 100px;
+      h2{
+        font-size: 16px;
+      };
+      h3{
+        font-size: 14px;
+      }
     }
 }
 
