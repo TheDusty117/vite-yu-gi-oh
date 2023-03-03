@@ -1,26 +1,29 @@
-<template>
-  <div class="container">
-    <div class="row">
-      <div class="col-4">YUGIOH</div>
-    </div>
-  </div>
-</template>
 
 
 <script>
-import bootstrap from 'bootstrap'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Header from './components/Header.vue';
 
-  export default{
-    components: {
-      bootstrap
-    }
-
-
+export default {
+  components: {
+    Header,
   }
+}
 
 </script>
 
 
-<style lang="scss" scoped>
+
+<template>
+  <Header/>
+</template>
+
+
+
+<style lang="scss">
+@use './style/general.scss' as *;
+
+
+
 
 </style>
