@@ -15,7 +15,7 @@ export default{
 
 <template>
 
-  <li>
+  <li class="">
     <img :src="card.card_images[0].image_url" alt="">
     <h2>{{ card.name }}</h2>
     <h3>{{ card.archetype }}</h3>
@@ -29,7 +29,8 @@ export default{
 <style lang="scss" scoped>
 
 li {
-  width: 100px;
+  width: 150px;
+  background-color: wheat;
 
   h2 {
     font-size: 16px;

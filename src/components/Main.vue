@@ -2,7 +2,13 @@
 //1___importo axios per effettuare le chiamate all'api
 import axios from 'axios'
 
+import CardMain from './CardMain.vue'
+
 export default {
+  components:{
+    CardMain
+  },
+
   data() {
     return {
       cards:[]
@@ -34,12 +40,13 @@ export default {
       <div class="row">
         <div class="col-12">
 
-          <ul class="cards-list px-4">
-            <li v-for="card in cards" :key="card.id" >
+          <ul class="cards-list p-2">
+            <!-- <li v-for="card in cards" :key="card.id" class="d-flex flex-column align-items-center" >
               <img :src="card.card_images[0].image_url" alt="">
               <h2>{{ card.name }}</h2>
               <h3>{{ card.archetype }}</h3>
-            </li>
+            </li> -->
+            <CardMain v-for="element in cards" :key="element.id" :card="element" />
           </ul>
 
         </div>
@@ -53,24 +60,17 @@ export default {
 
 .container{
   background-color: teal;
-  padding: 100px 0px;
+  padding: 0px 0px;
 }
 
 .cards-list{
   display: grid;
+  align-items: baseline;
   grid-template-columns: repeat(5,1fr);
-    li{
-      width: 100px;
-      h2{
-        font-size: 16px;
-      };
-      h3{
-        font-size: 14px;
-      }
-      img{
-        width: 150px;
-      }
-    }
+  justify-content: space-evenly;
+  justify-items: center;
+  align-content: space-evenly;
+  
 }
 
 </style>
