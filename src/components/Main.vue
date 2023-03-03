@@ -31,13 +31,19 @@ export default {
 <template>
   <main>
     <div class="container">
-      <ul>
-        <li v-for="card in cards" :key="card.id" >
-          <img :src="card.card_images.image_url_cropped" alt="">
-          <h2>{{ card.name }}</h2>
-          <h3></h3>
-        </li>
-      </ul>
+      <div class="row">
+        <div class="col-12">
+
+          <ul class="cards-list px-4">
+            <li v-for="card in cards" :key="card.id" >
+              <img :src="card.card_images.image_url_cropped" alt="">
+              <h2>{{ card.name }}</h2>
+              <h3></h3>
+            </li>
+          </ul>
+
+        </div>
+      </div>
     </div>
   </main>
 </template>
@@ -48,6 +54,14 @@ export default {
 .container{
   background-color: teal;
   padding: 100px 0px;
+}
+
+.cards-list{
+  display: grid;
+  grid-template-columns: repeat(5,1fr);
+    li{
+      width: 100px;
+    }
 }
 
 </style>
