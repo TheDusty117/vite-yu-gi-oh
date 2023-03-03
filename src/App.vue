@@ -1,12 +1,15 @@
 
-
 <script>
 import 'bootstrap/dist/css/bootstrap.min.css';
+
 import Header from './components/Header.vue';
+
+import Main from './components/Main.vue';
 
 export default {
   components: {
     Header,
+    Main,
   }
 }
 
@@ -16,6 +19,9 @@ export default {
 
 <template>
   <Header/>
+
+  <Main/>
+
 </template>
 
 

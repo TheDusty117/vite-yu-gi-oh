@@ -1,3 +1,14 @@
+<script>
+export default {
+  data() {
+    return {
+      title: 'YU-GI-OH!'
+    }
+  }
+}
+
+</script>
+
 <template>
 
   <header>
@@ -13,17 +24,6 @@
   </header>
 
 </template>
-
-<script>
-export default{
-  data(){
-    return{
-      title: 'YU-GI-OH!'
-    }
-  }
-}
-
-</script>
 
 <style lang="scss" scoped>
 @use '../style/partials/variables' as*;
