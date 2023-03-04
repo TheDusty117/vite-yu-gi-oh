@@ -46,10 +46,12 @@ export default {
 
 <template>
   <main>
-    <div class="container">
-      <div class="row">
-        <div class="col-12">
-
+    <div class="container py-4">
+      <div class="row justify-content-center">
+        <div class="col-10">
+          <div class="card-counter">
+            <h2>Carte trovate: {{ store.cards.length }}</h2>
+          </div>
           <ul class="cards-list p-2">
             <!-- <li v-for="card in cards" :key="card.id" class="d-flex flex-column align-items-center" >
               <img :src="card.card_images[0].image_url" alt="">
@@ -69,10 +71,16 @@ export default {
 <style lang="scss" scoped>
 
 .container{
+  background-image: url(/images/background-card.png);
+  background-repeat: no-repeat;
+  background-size: cover;
   background-color: teal;
   padding: 0px 0px;
 }
 
+.card-counter{
+  background-color: darkgray;
+}
 .cards-list{
   display: grid;
   align-items: baseline;
@@ -80,7 +88,8 @@ export default {
   justify-content: space-evenly;
   justify-items: center;
   align-content: space-evenly;
-  
+  // background-color: white;
+  border: 10px solid black;
 }
 
 </style>

@@ -13,11 +13,9 @@ export default {
 
   <header>
     <div class="container">
-      <div class="row">
+      <div class="row justify-content-center">
         <div class="col-4">
-          <h1>
-            {{ title }}
-          </h1>
+          <img class="main-logo" src="/images/main-logo.svg" alt="">
         </div>
       </div>
     </div>
@@ -29,7 +27,12 @@ export default {
 @use '../style/partials/variables' as*;
 
 .container{
-  background-color: grey;
+  background-color: rgb(68, 68, 68);
+  border-radius: 40px;
+}
+
+.main-logo{
+  width: 400px;
 }
 
 </style>

@@ -29,13 +29,16 @@ export default{
 <style lang="scss" scoped>
 
 li {
-  width: 130px;
-  background-color: wheat;
+  width: 150px;
+  height: 280px;
+  background-color: #B45322;
   margin-bottom: 20px;
+  text-align: center;
 
   h2 {
-    font-size: 16px;
+    font-size: 14px;
     margin: 0px;
+    font-weight: 700;
   }
 
   h3 {
@@ -44,7 +47,7 @@ li {
   }
 
   img {
-    width: 130px;
+    width: 150px;
   }
 }
 
