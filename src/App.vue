@@ -18,9 +18,12 @@ export default {
 
 
 <template>
+
   <Header/>
 
   <Main/>
+
+  <!--footer-->
 
 </template>
 

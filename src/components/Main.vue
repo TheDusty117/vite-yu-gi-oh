@@ -2,6 +2,8 @@
 //1___importo axios per effettuare le chiamate all'api
 import axios from 'axios'
 
+import store from '../store'
+
 import CardMain from './CardMain.vue'
 
 export default {

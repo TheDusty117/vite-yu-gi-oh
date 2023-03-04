@@ -29,19 +29,22 @@ export default{
 <style lang="scss" scoped>
 
 li {
-  width: 150px;
+  width: 130px;
   background-color: wheat;
+  margin-bottom: 20px;
 
   h2 {
     font-size: 16px;
+    margin: 0px;
   }
 
   h3 {
     font-size: 14px;
+    margin: 0px;
   }
 
   img {
-    width: 150px;
+    width: 130px;
   }
 }
 
