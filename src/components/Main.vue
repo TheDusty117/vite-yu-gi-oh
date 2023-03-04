@@ -13,9 +13,13 @@ export default {
 
   data() {
     return {
-      cards:[]
+      cards:[],
+      store,
+      //store: store
     }
   },
+
+
   methods: {
     fetchCards() {
       console.log('fetching data')
@@ -25,12 +29,16 @@ export default {
         //uso arrow function per poter avere un this dove accedere alle informazioni interne
         .then((res)=> {
           console.log(res.data.data)
-          this.cards = res.data.data
+          // this.cards = res.data.data
+          this.store.cards = res.data.data
+          
+          console.log(this.store)
         })
     }
   },
   created(){
     this.fetchCards()
+    console.log(this.store)
   },
 }
 </script>
@@ -48,7 +56,7 @@ export default {
               <h2>{{ card.name }}</h2>
               <h3>{{ card.archetype }}</h3>
             </li> -->
-            <CardMain v-for="element in cards" :key="element.id" :card="element" />
+            <CardMain v-for="element in store.cards" :key="element.id" :card="element" />
           </ul>
 
         </div>
