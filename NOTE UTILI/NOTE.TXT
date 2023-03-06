@@ -1,11 +1,24 @@
 PER INTERAZIONE STORE FIGLIO PADRE,
 
-1. NELLO STORE, aggiungo una variaible search:'', il valore di tale variabile, sara' quello che noi inseriremo nell'input
+1. NELLO STORE, aggiungo una variaible search:'', il valore di tale variabile, sara' quello che noi inseriremo nell'input,
+  e serivra' PER POI REPERIRLO PROPRIO DALLO STORE
 
-2. CREAZIONE COMPONENTE di MAIN barra di ricerca, dove ci sara' input, e collegheremo tale input con un v-model="store.search",
-   quindi andando in store. search, quindi il valore inserito poc'anzi.
+2. CREAZIONE COMPONENTE di MAIN, barra di ricerca "SearchBarMain" , dove ci sara' input, e collegheremo tale input con un v-model="store.search",
+   PROPRIO ALLO STORE quindi andando in store. search, quindi il valore inserito pocanzi.
 
-3. UNA VOLTA COLLEGATI QUESTI VALORI, possiamo inserire il nostro componente nel MAIN.
+3. al nostro elemento INPUT, andiamo a fare @keyup.enter , $emit="('nomeCheScegliamo')", tale nome, serve a dare una risposta al nostro MAIN,
+  
+4.  nel nostro MAIN, IMPORTIAMO il nostro COMPONENTE citato qui sopra SearchBarMain, e andiamo ad inseire all'interno 
+    del self closing tag, il nostro $emit="nomeCheScegliamo", IN QUESTO MODO: @nomeCheScegliamo= fetchCards, che non e'
+    nient'altro che il nostro metodo, che va a fare la chiamata alla api, per reperire le varie carte,
 
-4. ovviamente dobbiamo creare un metodo in MAIN che ci vada poi effettivamente a prendere unicamente le carte derivate dal nostro
-  input di ricerca
+    QUINDI quando facciamo enter, verra' registrato l'evento che abbiamo emesso grazie a $emit nello step 3., tale evento 
+    invochera' la funzione FETCH CARD, che andra' a sua volta a fare un'altra chiamata alla API, prendendo pero' come filtro
+    unicamente il valore inserito da noi nell'input, AD ESEMPIO SCRIVENDO DRAGON, prendera' solo le carte che hanno
+    nel nome DRAGON,.
+
+    5. ovviamente per fare attivare tutto questo, nell'url dell'API andra' inserito in template literal, nella parte finale,
+    fn name ${search} quindi il valore inserito da noi nell'input.
+    ed ogni volte che verra' scritto qualcosa nell'input e cliccato ENTER, si rifara' la chiamata all'API per far 
+    cercare ogni volta le carte con i criteri di ricerca da noi inseriti.
+

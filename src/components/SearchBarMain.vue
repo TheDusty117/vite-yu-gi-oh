@@ -11,10 +11,7 @@ export default {
     };
   },
   methods:{
-    onEnter() {
-      console.log('enter funziona!!!')
-      this.$emit('onSearch')
-    }
+
   }
 };
 
