@@ -27,8 +27,16 @@ export default {
     fetchCards() {
       console.log('fetching data')
       //qui viene fatta chiamata in get a endopoint:
+      const search = this.store.search
+      const selectedArchetype = this.store.selectedArchetype
       axios
-        .get(`https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0&fname=${store.search}`)
+        // .get(`https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0&fname=${store.search}&archetype=${store.archetype}`)
+        .get('https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0',{
+          params: {
+            fname: search,
+            archetype: selectedArchetype,
+          }
+        })
         //uso arrow function per poter avere un this dove accedere alle informazioni interne
         .then((res)=> {
           console.log(res.data.data)
@@ -37,7 +45,7 @@ export default {
 
           //aggiunta variabile di ricerca
           // NB search che mi vado a recuperare dallo store, dove ho inserito search:''
-          const search = this.store.search
+          // const search = this.store.search
           
           console.log(this.store)
         })
@@ -63,7 +71,7 @@ export default {
         <div class="col-10">
           <div>
             <!--componente BARRA DI RICERCA-->
-            <SearchBarMain @onSearch="fetchCards" />
+            <SearchBarMain @onSearch="fetchCards" @onArchetypeChange="fetchCards" />
           </div>
           <span class="bg-primary"> {{ store.search }} </span>
           <div class="card-counter">

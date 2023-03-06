@@ -6,6 +6,8 @@ const store = reactive({
 //passiamo l'oggetto che ci interessa
   cards: [],
   search:'',
+  archetype: '',
+
 })
 
 //questo oggetto va esportato con il classico export default

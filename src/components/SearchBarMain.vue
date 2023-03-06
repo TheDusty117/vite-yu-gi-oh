@@ -8,6 +8,19 @@ export default {
     return {
       store,
       search: '',
+      selectedArchetype: [
+        'Chaos',
+        'Blue-Eyes',
+        'Cyber',
+        'Red-Eyes',
+        'Heroic',
+        'Frog',
+        'Elemental Hero',
+        'Alien',
+        'Armed Dragon',
+        'Galaxy',
+
+      ]
     };
   },
   methods:{
@@ -18,6 +31,12 @@ export default {
 </script>
 
 <template>
+  <div>
+    <select @change="$emit('onArchetypeChange')" v-model="store.selectedArchetype" >
+      <option v-for="archetype in selectedArchetype" :value="archetype" :key="archetype">{{ archetype }}</option>
+    </select>
+  </div>
+
   <div>
     <!-- 2. creo un input text, che on keyup enter, attivera' una funzione che fara' il fetchCArds per cercare le carte in base ad un determinato parametro, e avra' un v-model che si collega allo store dove ci sono le carte in modo tale da filtrarle-->
     <input type="text" @keyup.enter="$emit('onSearch')" v-model="store.search" placeholder="cerca la carta" >
