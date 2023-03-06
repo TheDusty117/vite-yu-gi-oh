@@ -28,12 +28,16 @@ export default {
       console.log('fetching data')
       //qui viene fatta chiamata in get a endopoint:
       axios
-        .get('https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0')
+        .get(`https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0&fname=${store.search}`)
         //uso arrow function per poter avere un this dove accedere alle informazioni interne
         .then((res)=> {
           console.log(res.data.data)
           // this.cards = res.data.data
           this.store.cards = res.data.data
+
+          //aggiunta variabile di ricerca
+          // NB search che mi vado a recuperare dallo store, dove ho inserito search:''
+          const search = this.store.search
           
           console.log(this.store)
         })
@@ -59,8 +63,9 @@ export default {
         <div class="col-10">
           <div>
             <!--componente BARRA DI RICERCA-->
-            <SearchBarMain/>
+            <SearchBarMain @onSearch="fetchCards" />
           </div>
+          <span class="bg-primary"> {{ store.search }} </span>
           <div class="card-counter">
             <h2>Carte trovate: {{ store.cards.length }}</h2>
           </div>
