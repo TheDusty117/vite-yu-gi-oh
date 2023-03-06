@@ -5,9 +5,10 @@ import { reactive } from "vue";
 const store = reactive({
 //passiamo l'oggetto che ci interessa
   cards: [],
-
+  search:'',
 })
 
 //questo oggetto va esportato con il classico export default
 
 export default store
+

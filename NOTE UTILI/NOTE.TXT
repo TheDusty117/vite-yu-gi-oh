@@ -1,0 +1,11 @@
+PER INTERAZIONE STORE FIGLIO PADRE,
+
+1. NELLO STORE, aggiungo una variaible search:'', il valore di tale variabile, sara' quello che noi inseriremo nell'input
+
+2. CREAZIONE COMPONENTE di MAIN barra di ricerca, dove ci sara' input, e collegheremo tale input con un v-model="store.search",
+   quindi andando in store. search, quindi il valore inserito poc'anzi.
+
+3. UNA VOLTA COLLEGATI QUESTI VALORI, possiamo inserire il nostro componente nel MAIN.
+
+4. ovviamente dobbiamo creare un metodo in MAIN che ci vada poi effettivamente a prendere unicamente le carte derivate dal nostro
+  input di ricerca

@@ -6,9 +6,12 @@ import store from '../store'
 
 import CardMain from './CardMain.vue'
 
+import SearchBarMain from './SearchBarMain.vue'
+
 export default {
   components:{
-    CardMain
+    CardMain,
+    SearchBarMain,
   },
 
   data() {
@@ -34,6 +37,11 @@ export default {
           
           console.log(this.store)
         })
+    },
+    //FUNZIONE DI RICERCA CARTE CON CRITERIO TESTO INSERITO
+    onSearchFunction(){
+      this.fetchCards()
+      console.log(this.onSearchFunction)
     }
   },
   created(){
@@ -49,6 +57,10 @@ export default {
     <div class="container py-4">
       <div class="row justify-content-center">
         <div class="col-10">
+          <div>
+            <!--componente BARRA DI RICERCA-->
+            <SearchBarMain/>
+          </div>
           <div class="card-counter">
             <h2>Carte trovate: {{ store.cards.length }}</h2>
           </div>
